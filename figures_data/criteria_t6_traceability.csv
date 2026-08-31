@@ -1,0 +1,8 @@
+population,rows,raw_matches,raw_pct,ligature_repaired,ligature_pct,space_repaired,space_pct
+entity_evidence (equipment),1013,559,55.2,628,62.0,675,66.6
+entity_evidence (issue),2625,1330,50.7,1635,62.3,2018,76.9
+home_issues,2567,1272,49.6,1577,61.4,1960,76.4
+coverage_items,315,110,34.9,110,34.9,119,37.8
+warranty_coverages,261,89,34.1,89,34.1,89,34.1
+home_utilities,36,0,0.0,0,0.0,0,0.0
+total,6817,3360,49.3,4039,59.2,4861,71.3

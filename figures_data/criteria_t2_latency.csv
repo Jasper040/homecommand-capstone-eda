@@ -1,0 +1,8 @@
+population,runs,min_s,p25_s,median_s,mean_s,p75_s,max_s,under_60_s,distinct_documents
+all runs,35,57.8,80.3,169.7,238.8,291.9,959.3,1,28
+"single upload, inspection report",8,71.3,139.7,141.6,150.6,189.8,201.4,0,
+"single upload, other document types",9,57.8,64.7,70.1,70.8,78.0,81.4,1,
+"bulk batch, inspection report",18,82.2,175.3,258.1,361.9,548.1,959.3,0,
+"single upload, all document types",17,57.8,68.9,80.3,108.4,141.6,201.4,1,
+"extraction phase only, all runs",35,5.0,62.9,120.8,129.9,181.5,293.9,3,
+"extraction phase only, single upload",17,34.8,60.2,70.8,98.4,137.4,196.4,1,

@@ -1,0 +1,13 @@
+category,severity,count
+Comfort & Cosmetic,Low,159
+Comfort & Cosmetic,Medium,15
+Comfort & Cosmetic,High,0
+Comfort & Cosmetic,Critical,0
+Functional Decline,Low,290
+Functional Decline,Medium,893
+Functional Decline,High,233
+Functional Decline,Critical,0
+Safety & Integrity,Low,20
+Safety & Integrity,Medium,166
+Safety & Integrity,High,472
+Safety & Integrity,Critical,39

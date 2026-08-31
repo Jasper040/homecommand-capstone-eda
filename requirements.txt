@@ -1,0 +1,4 @@
+# Dependencies for eda_homecommand_v4.py
+matplotlib>=3.8
+psycopg2-binary>=2.9
+python-dotenv>=1.0   # optional: lets the script read POSTGRES_URI from a local .env

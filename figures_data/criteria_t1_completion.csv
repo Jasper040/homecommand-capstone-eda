@@ -1,0 +1,3 @@
+basis,numerator,denominator,rate_pct,meets_90
+distinct documents by extracted text (adopted),30,32,93.8,True
+records by processing_status over terminal records,51,57,89.5,False

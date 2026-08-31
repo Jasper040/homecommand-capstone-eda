@@ -1,0 +1,6 @@
+key,value
+run_date,2026-08-27
+script,eda_homecommand_v4.py
+basis,production corpus at run time; real customers excluded via EDA_EXCLUDE_USER_IDS; de-duplicated on extracted text (SHA-256 over distinct section text)
+customer_accounts_excluded,1
+session,read-only at the connection level; aggregates only; no property data written

@@ -1,0 +1,4 @@
+size_bucket,runs,mean_s,min_s,max_s
+large,2,37.35,34.78,39.92
+medium,25,15.29,7.19,24.57
+small,14,15.21,1.69,46.14
