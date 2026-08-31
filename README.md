@@ -10,7 +10,8 @@ reader holding this folder can check the report without access to the database.
 
 | File | What it holds |
 |---|---|
-| `eda_homecommand_v4.py` | The one script that produced everything here, in one read-only run |
+| `replot_from_csv.py` | Redraws the figures from the CSVs below, with no database and no credentials. This is the one a reader can run |
+| `eda_homecommand_v4.py` | The script that produced everything here, in one read-only run against production. Needs credentials a reader does not have |
 | `01_…07_*.png` | The seven figures in the Exploratory Data Analysis section |
 | `figures_data/fig01…fig07_*.csv` | The aggregate table behind each figure |
 | `figures_data/measurement.csv` | Run date, basis, script version |
@@ -37,11 +38,36 @@ and are not in the script.
 
 ## Reproducing it
 
+### Without a database, which is how a reader checks this
+
 ```
-export POSTGRES_URI="postgresql://..."
-export EDA_EXCLUDE_USER_IDS="<uuid>[,<uuid>]"
+pip install matplotlib
+python replot_from_csv.py
+```
+
+This redraws the seven figures from `figures_data/*.csv` into `replot/` and prints the
+headline totals it recomputed on the way: 30 distinct documents behind 52 records, 2,287
+de-duplicated issues, $1,614,468 of identified repair exposure, 41 timed bundle uploads
+averaging 16.3 seconds. Compare those against the report, and the redrawn figures against
+the originals beside them. No credentials are involved.
+
+One panel differs on purpose. Figure 5's left half is a histogram of individual equipment
+ages in the original, and per-item ages are not published here, so the redrawn version
+shows the published counts instead and says so on the figure.
+
+### With the database, which only the authors can do
+
+`eda_homecommand_v4.py` is what produced the CSVs in the first place. It cannot be run
+from this repository: `POSTGRES_URI` is a production database credential and
+`EDA_EXCLUDE_USER_IDS` is the account identifier the analysis excludes, and publishing
+either would defeat the point of excluding it. The script is here so the method is
+auditable, not so it can be re-run by a third party.
+
+```
+export POSTGRES_URI="postgresql://..."     # production credential, not published
+export EDA_EXCLUDE_USER_IDS="<uuid>"       # excluded account, not published
 python eda_homecommand_v4.py
 ```
 
 The session is opened read-only at the connection level. The script writes only the
-files listed above.
+files listed above, and refuses to start if the exclusion list is missing.
