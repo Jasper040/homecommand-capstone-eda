@@ -1,10 +1,11 @@
 # HomeCommand capstone — the measurement set behind the report
 
-This folder is the single source of truth for every corpus, criteria and cost figure
-in the report. Each number the report states about the document corpus, the seven
-technical success criteria, extraction traceability or the platform's metered AI
-spend is a row in one of the tables below, and the report cites those tables. A
-reader holding this folder can check the report without access to the database.
+This repository holds the measurement basis for the report: the aggregate tables
+behind every figure it states, and the scripts that produced them. Each number the
+report gives for the document corpus, the seven technical success criteria,
+extraction traceability or the platform's metered AI spend is a row in one of the
+tables below, and the report cites those tables. A reader holding this repository can
+check the report without access to the database.
 
 ## What is here
 
@@ -19,6 +20,7 @@ reader holding this folder can check the report without access to the database.
 | `figures_data/criteria_t1_completion.csv` … `criteria_t6_traceability.csv` | The technical success criteria T1–T6, each with its population, numerator and denominator |
 | `figures_data/criteria_t6_by_document.csv` | Per-document quote-resolution rates for the traceability replay |
 | `figures_data/cost_events.csv` | Metered model spend, the 9 August anchor day, the reasoning-token correction |
+| `scripts/` | The four measurement scripts behind figures elsewhere in the report: the cost model, the section-label heterogeneity measurement, the citation checker and the run comparison. `scripts/capstone_cost_model.py` runs with no database and no credentials; `scripts/README.md` says what each of the others needs |
 | `_superseded/2026-08-15-snapshot/` | The 15 August 2026 figures and CSVs, kept so the reproduction claim below can be checked |
 
 ## The basis
